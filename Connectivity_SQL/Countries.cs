@@ -369,7 +369,7 @@ namespace Connectivity_SQLQuery
             }
 
             Console.WriteLine("\n");
-            Console.WriteLine("\tVIEW MENU COUNTRIES");
+            Console.WriteLine("\tVIEW MENU COUNTRIES\t");
             Console.WriteLine("===================================");
             Console.WriteLine("1. Insert Table");
             Console.WriteLine("2. Getby Id");
