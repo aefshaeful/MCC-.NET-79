@@ -60,5 +60,20 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return locations;
         }
+
+        
+        // VIEW MENU GETALL : LOCATION
+        public void ViewMenuLocation()
+        {
+            Console.Clear();
+            Console.WriteLine("\tGET ALL LOCATION\t");
+            Console.WriteLine("===================================");
+            List<Locations> loc = GetAllLocations();
+            foreach (Locations locations in loc)
+            {
+                Console.WriteLine($"Id: {locations.Id} StreetAddress: {locations.StreetAddress} PostalCode: {locations.PostalCode} City: {locations.City} StateProvince: {locations.StateProvince} CountryId: {locations.CountryId}");
+            }
+            Console.ReadKey();
+        }
     }
 }
