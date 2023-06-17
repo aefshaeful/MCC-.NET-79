@@ -60,5 +60,20 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return histories;
         }
+
+        // VIEW MENU HISTORIES
+        public void ViewMenuHistories()
+        {
+            //GETALL : HISTORIES
+            Console.Clear();
+            Console.WriteLine("\tGET ALL HISTORIES\t");
+            Console.WriteLine("===================================");
+            List<Histories> hist = GetAllHistories();
+            foreach (Histories histories in hist)
+            {
+                Console.WriteLine($"Start_Date: {histories.Start_Date} Employee_Id: {histories.Employee_Id} End_Date: {histories.End_Date} Department_Id: {histories.Department_Id} Job_Id; {histories.Job_Id}");
+            }
+            Console.ReadKey();
+        }
     }
 }
