@@ -59,5 +59,20 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return jobs;
         }
+
+        // VIEW MENU JOBS
+        public void ViewMenuJobs()
+        {
+            //GETALL : JOBS
+            Console.Clear();
+            Console.WriteLine("\tGET ALL JOBS\t");
+            Console.WriteLine("===================================");
+            List<Jobs> jobb = GetAllJobs();
+            foreach (Jobs jobs in jobb)
+            {
+                Console.WriteLine($"Id: {jobs.Id}, Title: {jobs.Title}, Min_Salary: {jobs.Min_Salary}, Max_Salary: {jobs.Max_Salary}");
+            }
+            Console.ReadKey();
+        }
     }
 }
