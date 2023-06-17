@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Connectivity_SQL;
+using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
@@ -29,11 +30,11 @@ namespace Connectivity_SQLQuery
 
 
             //GETALL : REGION (Select Tabel Regions)
-           /* List<Regions> regions = Regions.GetAllRegion();
-            foreach (Regions region in regions)
-            {
-                Console.WriteLine($"id: {region.Id} Name: {region.Name}");
-            }*/
+            /* List<Regions> regions = Regions.GetAllRegion();
+             foreach (Regions region in regions)
+             {
+                 Console.WriteLine($"id: {region.Id} Name: {region.Name}");
+             }*/
 
 
             //GETALL : COUNTRIES
@@ -221,6 +222,15 @@ namespace Connectivity_SQLQuery
              {
                  Console.WriteLine("Delete Failed");
              }*/
+
+
+            ////////////////////////LINQ///////////////////////////
+            
+            /*LINQ linq = new LINQ();
+            linq.GetTakeEmployees();*/
+
+            LINQ linQ = new LINQ();
+            linQ.GetTolalEmployeesSetDepart();
         }
     }
 }
