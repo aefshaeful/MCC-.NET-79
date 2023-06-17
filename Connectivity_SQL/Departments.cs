@@ -59,5 +59,20 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return departments;
         }
+
+        // VIEW MENU DEPARTMENTS
+        public void ViewMenuDepartments()
+        {
+            //GETALL : DEPARTMENTS
+            Console.Clear();
+            Console.WriteLine("\tGET ALL DEPARTMENTS");
+            Console.WriteLine("===================================");
+            List<Departments> dp = GetAllDepartments();
+            foreach (Departments departments in dp)
+            {
+                Console.WriteLine($"Id: {departments.Id} Name: {departments.Name} Location_Id: {departments.Location_Id} Manager_Id: {departments.Manager_Id}");
+            }
+            Console.ReadKey();
+        }
     }
 }
