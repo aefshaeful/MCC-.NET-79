@@ -267,5 +267,144 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return result;
         }
+
+
+        ////////////////////////VIEW MENU COUNTRIES///////////////////////////
+        
+        // VIEW MENU INSERT : COUNTRIES
+        public void ViewMenuInsert()
+        {
+            Console.WriteLine("\tINSERT TO TABLE\t");
+            Console.WriteLine("===================================");
+            Console.Write("Add a new countries id :");
+            string id = Console.ReadLine();
+            Console.Write("Add a new name countries :");
+            string name = Console.ReadLine();
+            Console.Write("Input region id :");
+            int region_id = int.Parse(Console.ReadLine());
+            int isInsertSuccessful = Countries.insertCountries(id, name, region_id);
+            if (isInsertSuccessful > 0)
+            {
+                Console.WriteLine("Add Data Success");
+            }
+            else
+            {
+                Console.WriteLine("Add Data Invalid");
+            }
+            Console.ReadKey();
+            /*ViewMenuCountries();*/
+        }
+
+        // VIEW MENU GETBY ID : COUNTRIES
+        public void ViewMenuGetById()
+        {
+            Console.WriteLine("\tGet Countries by ID\t");
+            Console.WriteLine("===================================");
+            Console.Write("Input countries id :");
+            string id = Console.ReadLine();
+            List<Countries> count = Countries.GetCountriesById(id);
+            foreach (Countries countries in count)
+            {
+                Console.WriteLine($"Id: {countries.Id}, Name: {countries.Name}, RegionId: {countries.RegionId}");
+            }
+            Console.ReadKey();
+            /*ViewMenuCountries();*/
+        }
+
+        // VIEW MENU UPDATE
+        public void ViewMenuUpdate()
+        {
+            Console.WriteLine("\tUPDATE TABLE COUNTRIES\t");
+            Console.WriteLine("===================================");
+            Console.Write("Input countries id :");
+            string id = Console.ReadLine();
+            Console.Write("Add new country name to update :");
+            string newname = Console.ReadLine();
+            Console.Write("Input region id: ");
+            int region_id = int.Parse(Console.ReadLine());
+            int isUpdateSuccessful = Countries.UpdateCountriesName(id, newname, region_id);
+            if (isUpdateSuccessful > 0)
+            {
+                Console.WriteLine("Update Successful!");
+            }
+            else
+            {
+                Console.WriteLine("Update Failed");
+            }
+            Console.ReadKey();
+           /* ViewMenuCountries();*/
+        }
+
+        // VIEW MENU DELETE : COUNTRIES
+        public void ViewMenuDelete()
+        {
+            Console.WriteLine("\tDELETE TABLE COUNTRIES\t");
+            Console.WriteLine("===================================");
+            Console.Write("Input a countries id to delete  :");
+            string id = Console.ReadLine();
+            int isDeleteSuccessful = Countries.DeleteCountriesName(id);
+            if (isDeleteSuccessful > 0)
+            {
+                Console.WriteLine("Delete Successful!");
+            }
+            else
+            {
+                Console.WriteLine("Delete Failed");
+            }
+            Console.ReadKey();
+            /*ViewMenuCountries();*/
+        }
+
+        // VIEW MENU GETALL : COUNTRIES
+        public void ViewMenuCountries()
+        {
+            //GETALL : COUNTRIES
+            Console.Clear();
+            Console.WriteLine("\tGET ALL COUNTRIES\t");
+            Console.WriteLine("===================================");
+            List<Countries> count = GetAllCountries();
+            foreach (Countries countries in count)
+            {
+                Console.WriteLine($"Id: {countries.Id} Name: {countries.Name} RegionId: {countries.RegionId}");
+            }
+
+            Console.WriteLine("\n");
+            Console.WriteLine("\tVIEW MENU COUNTRIES");
+            Console.WriteLine("===================================");
+            Console.WriteLine("1. Insert Table");
+            Console.WriteLine("2. Getby Id");
+            Console.WriteLine("3. Update Table");
+            Console.WriteLine("4. Delete Table");
+            Console.WriteLine("5. Exit");
+            Console.WriteLine("Select a menu :");
+            int inputMenuCount = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                switch (inputMenuCount)
+                {
+                    case 1:
+                        ViewMenuInsert();
+                        break;
+                    case 2:
+                        ViewMenuGetById();
+                        break;
+                    case 3:
+                        ViewMenuUpdate();
+                        break;
+                    case 4:
+                        ViewMenuDelete();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR : Input Not Valid");
+                Console.ReadKey();
+                this.ViewMenuCountries();
+            }
+        }
     }
 }
