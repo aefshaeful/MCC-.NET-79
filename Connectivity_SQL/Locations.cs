@@ -62,9 +62,10 @@ namespace Connectivity_SQLQuery
         }
 
         
-        // VIEW MENU GETALL : LOCATION
+        // VIEW MENU LOCATION
         public void ViewMenuLocation()
         {
+            // GETALL LOCATION
             Console.Clear();
             Console.WriteLine("\tGET ALL LOCATION\t");
             Console.WriteLine("===================================");
