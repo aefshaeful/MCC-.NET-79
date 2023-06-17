@@ -243,5 +243,147 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return result;
         }
+
+
+        ////////////////////////VIEW MENU REGIONS///////////////////////////
+
+        // VIEW MENU INSERT : REGIONS
+        public void ViewMenuInsert()
+        {
+            Console.WriteLine("\tINSERT TO TABLE\t");
+            Console.WriteLine("===================================");
+            Console.Write("Add a new regions name :");
+            string name = Console.ReadLine();
+            int isInsertSuccessful = Regions.insertRegion(name);
+            if (isInsertSuccessful > 0)
+            {
+                Console.WriteLine("Add Data Success");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+            else
+            {
+                Console.WriteLine("Add Data Invalid");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+        }
+
+
+        // VIEW MENU GETBY ID : REGIONS
+        public void ViewMenuGetById()
+        {
+            Console.WriteLine("\tGET REGIONS BY ID\t");
+            Console.WriteLine("===================================");
+            Console.Write("Input regions id: ");
+            int id = int.Parse(Console.ReadLine());
+            List<Regions> regions = Regions.GetRegionsById(id);
+            foreach (Regions region in regions)
+            {
+                Console.WriteLine($"Id: {region.Id} Name: {region.Name}");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+        }
+
+
+        // VIEW MENU UPDATE : REGIONS
+        public void ViewMenuUpdate()
+        {
+            Console.WriteLine("\tUPDATE TABLE REGIONS\t");
+            Console.WriteLine("===================================");
+            Console.Write("Masukkan id region : ");
+            int id = int.Parse(Console.ReadLine());
+            Console.Write("Masukkan nama region yang di update : ");
+            string newname = Console.ReadLine();
+            int isUpdateSuccessful = Regions.UpdateRegionsName(id, newname);
+            if (isUpdateSuccessful > 0)
+            {
+                Console.WriteLine("Update Successful!");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+            else
+            {
+                Console.WriteLine("Update Failed");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+        }
+
+
+        // VIEW MENU DELETE : REGIONS
+        public void ViewMenuDelete()
+        {
+            Console.WriteLine("\tDELETE TABLE REGIONS\t ==");
+            Console.WriteLine("===================================");
+            Console.Write("Input a regions id to delete : ");
+            int id = int.Parse(Console.ReadLine());
+            int isDeleteSuccessful = Regions.DeleteRegionsName(id);
+            if (isDeleteSuccessful > 0)
+            {
+                Console.WriteLine("Delete Successful!");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+            else
+            {
+                Console.WriteLine("Delete Failed");
+                Console.ReadKey();
+                ViewMenuRegions();
+            }
+        }
+
+        // VIEW MENU GETALL : REGIONS
+        public void ViewMenuRegions()
+        {
+            //GETALL : REGION (Select Tabel Regions)
+            Console.Clear();
+            Console.WriteLine("\tGET ALL REGIONS\t ==");
+            Console.WriteLine("===================================");
+            List<Regions> regions = Regions.GetAllRegion();
+            foreach (Regions region in regions)
+            {
+                Console.WriteLine($"id: {region.Id} Name: {region.Name}");
+            }
+
+            Console.WriteLine("\n");
+            Console.WriteLine("\tVIEW MENU REGIONS");
+            Console.WriteLine("===================================");
+            Console.WriteLine("1. Insert Table");
+            Console.WriteLine("2. Getby Id");
+            Console.WriteLine("3. Update Table");
+            Console.WriteLine("4. Delete Table");
+            Console.WriteLine("5. Exit");
+            Console.WriteLine("Select menu :")
+            int inputMenuReg = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                switch (inputMenuReg)
+                {
+                    case 1:
+                        ViewMenuInsert();
+                        break;
+                    case 2:
+                        ViewMenuGetById();
+                        break;
+                    case 3:
+                        ViewMenuUpdate();
+                        break;
+                    case 4:
+                        ViewMenuDelete();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("ERROR : Input Not Valid");
+                Console.ReadKey();
+                this.ViewMenuRegions();
+            }
+        }
     }
 }
