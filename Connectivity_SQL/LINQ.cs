@@ -4,7 +4,7 @@ namespace Connectivity_SQL
 {
     public class LINQ
     {
-        public void Main()
+        public void GetTakeEmployees()
         {
             var employees = new Employees();
             var departments = new Departments();
@@ -12,7 +12,7 @@ namespace Connectivity_SQL
             var countries = new Countries();
             var regions = new Regions();
 
-            var employee = from e in employees.GetAllEmployees()
+            var employee = (from e in employees.GetAllEmployees()
                             join d in departments.GetAllDepartments() on e.Department_Id equals d.Id
                             join l in locations.GetAllLocations() on d.Location_Id equals l.Id
                             join c in countries.GetAllCountries() on l.CountryId equals c.Id
@@ -20,32 +20,60 @@ namespace Connectivity_SQL
                             select new
                             {
                                 id = e.Id,
-                                FirstName = e.Firsh_Name,
-                                LastName = e.Last_Name,
+                                FullName = $"{e.Firsh_Name} {e.Last_Name}",
                                 Email = e.Email,
                                 PhoneNumber = e.Phone_Number,
                                 Salary = e.Salary,
                                 DepartmentsName = d.Name,
                                 StreetAddress = l.StreetAddress,
                                 CountryName = c.Name,
-                                Regions = r.Name,
-
-                            };
+                                Regions = r.Name
+                            }).Take(5);
 
             foreach (var emp in employee)
             {
-                Console.WriteLine($"{emp.FirstName} {emp.LastName} {emp.Email} {emp.PhoneNumber} {emp.Salary} {emp.DepartmentsName} {emp.StreetAddress} {emp.CountryName} {emp.Regions}");
+                Console.WriteLine("ID :" + emp.id);
+                Console.WriteLine("Full Name :" + emp.FullName);
+                Console.WriteLine("Email :" + emp.Email);
+                Console.WriteLine("Phone Number :" + emp.PhoneNumber);
+                Console.WriteLine("Salary :" + emp.Salary);
+                Console.WriteLine("Departments Name :" + emp.DepartmentsName);
+                Console.WriteLine("Street Address :" + emp.StreetAddress);
+                Console.WriteLine("Country Name :" + emp.CountryName);
+                Console.WriteLine("Regions :" + emp.Regions);
+                Console.WriteLine("======================================");
             }
         }
+
+        public void GetTolalEmployeesSetDepart()
+        {
+            var employees = new Employees();
+            var departments = new Departments();
+
+            var employ = (from e in employees.GetAllEmployees()
+                          join d in departments.GetAllDepartments() on e.Department_Id equals d.Id
+                          group e by d.Name into g
+                          where g.Count() > 0
+                          select new
+                          {
+                              DepartmentsName = g.Key,
+                              TotalEmployees = g.Count(),
+                              MinSalary = g.Min(e => e.Salary),
+                              MaxSalary = g.Max(e => e.Salary),
+                              AverageSalary = g.Average(e => e.Salary)
+                          });
+
+            foreach (var em in employ)
+            {
+                Console.WriteLine("Department Name :" + em.DepartmentsName);
+                Console.WriteLine("Total Employees :" + em.TotalEmployees);
+                Console.WriteLine("Min Salary :" + em.MinSalary);
+                Console.WriteLine("Max Salary :" + em.MaxSalary);
+                Console.WriteLine("Average Salary :" + em.AverageSalary);
+                Console.WriteLine("======================================");
+                Console.WriteLine(" ");
+            }
+        }
+
     }
 }
-
-
-/*Buatlah** Method LINQ** untuk menampilkan data dengan kriteria yang ditampilkan
-1. Data employee
-2. Tambahkan informasi nama department
-3. Tambahkan informasi lokasi
-4. Tambahkan informasi country
-5. Tambahkan informasi region
-6. Limit data yang tampil hanya 5
-column yang tampil : id, full_name, email, phone, salary, department_name, street_address, country_name, region_name.*/
