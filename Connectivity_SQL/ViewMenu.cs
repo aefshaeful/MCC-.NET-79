@@ -11,7 +11,7 @@ namespace Connectivity_SQL
 {
     public class ViewMenu
     {
-        SqlConnection connec = new SqlConnection();
+        /*SqlConnection connec = new SqlConnection();
         connection = Connection.connection;
         Regions _region = new Regions();
         Countries _countrie = new Countries();
@@ -25,6 +25,6 @@ namespace Connectivity_SQL
 
 
         Console.WriteLine("=== Database Employees ===");
-        Console.WriteLine("1. Reg");
+        Console.WriteLine("1. Reg");*/
     }
 }
