@@ -258,15 +258,13 @@ namespace Connectivity_SQLQuery
             if (isInsertSuccessful > 0)
             {
                 Console.WriteLine("Add Data Success");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
             else
             {
                 Console.WriteLine("Add Data Invalid");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
+            Console.ReadKey();
+            /*ViewMenuRegions();*/
         }
 
 
@@ -275,15 +273,15 @@ namespace Connectivity_SQLQuery
         {
             Console.WriteLine("\tGET REGIONS BY ID\t");
             Console.WriteLine("===================================");
-            Console.Write("Input regions id: ");
+            Console.Write("Input region id :");
             int id = int.Parse(Console.ReadLine());
             List<Regions> regions = Regions.GetRegionsById(id);
             foreach (Regions region in regions)
             {
                 Console.WriteLine($"Id: {region.Id} Name: {region.Name}");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
+            Console.ReadKey();
+           /* ViewMenuRegions();*/
         }
 
 
@@ -292,23 +290,21 @@ namespace Connectivity_SQLQuery
         {
             Console.WriteLine("\tUPDATE TABLE REGIONS\t");
             Console.WriteLine("===================================");
-            Console.Write("Masukkan id region : ");
+            Console.Write("Input region id :");
             int id = int.Parse(Console.ReadLine());
-            Console.Write("Masukkan nama region yang di update : ");
+            Console.Write("Add the name regions to be update :");
             string newname = Console.ReadLine();
             int isUpdateSuccessful = Regions.UpdateRegionsName(id, newname);
             if (isUpdateSuccessful > 0)
             {
                 Console.WriteLine("Update Successful!");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
             else
             {
                 Console.WriteLine("Update Failed");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
+            Console.ReadKey();
+           /* ViewMenuRegions();*/
         }
 
 
@@ -317,21 +313,19 @@ namespace Connectivity_SQLQuery
         {
             Console.WriteLine("\tDELETE TABLE REGIONS\t ==");
             Console.WriteLine("===================================");
-            Console.Write("Input a regions id to delete : ");
+            Console.Write("Input a region id to delete :");
             int id = int.Parse(Console.ReadLine());
             int isDeleteSuccessful = Regions.DeleteRegionsName(id);
             if (isDeleteSuccessful > 0)
             {
                 Console.WriteLine("Delete Successful!");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
             else
             {
                 Console.WriteLine("Delete Failed");
-                Console.ReadKey();
-                ViewMenuRegions();
             }
+            Console.ReadKey();
+            /*ViewMenuRegions();*/
         }
 
         // VIEW MENU GETALL : REGIONS
@@ -341,7 +335,7 @@ namespace Connectivity_SQLQuery
             Console.Clear();
             Console.WriteLine("\tGET ALL REGIONS\t ==");
             Console.WriteLine("===================================");
-            List<Regions> regions = Regions.GetAllRegion();
+            List<Regions> regions = GetAllRegion();
             foreach (Regions region in regions)
             {
                 Console.WriteLine($"id: {region.Id} Name: {region.Name}");
@@ -355,7 +349,7 @@ namespace Connectivity_SQLQuery
             Console.WriteLine("3. Update Table");
             Console.WriteLine("4. Delete Table");
             Console.WriteLine("5. Exit");
-            Console.WriteLine("Select menu :")
+            Console.WriteLine("Select a menu :");
             int inputMenuReg = Convert.ToInt32(Console.ReadLine());
             try
             {
