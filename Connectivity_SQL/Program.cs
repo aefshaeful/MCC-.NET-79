@@ -231,6 +231,10 @@ namespace Connectivity_SQLQuery
 
             LINQ linQ = new LINQ();
             linQ.GetTolalEmployeesSetDepart();
+
+
+            /*ViewMenu viewmenu = new ViewMenu();
+            viewmenu.View();*/
         }
     }
 }
