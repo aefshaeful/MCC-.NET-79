@@ -73,5 +73,20 @@ namespace Connectivity_SQLQuery
             Connection.connection.Close();
             return employees;
         }
+
+        // VIEW MENU EMPLOYEES
+        public void ViewMenuEmployees()
+        {
+            //GETALL : EMPLOYEES
+            Console.Clear();
+            Console.WriteLine("\tGET ALL EMPLOYEES\t");
+            Console.WriteLine("===================================");
+            List<Employees> employ = GetAllEmployees();
+            foreach (Employees employees in employ)
+            {
+                Console.WriteLine($"Id: {employees.Id} Firsh_Name: {employees.Firsh_Name} Last_Name: {employees.Last_Name} Email: {employees.Email} Phone_Number: {employees.Phone_Number} Hire_Date: {employees.Hire_Date} Salary: {employees.Salary} Commision_Pct: {employees.Commision_Pct} Manager_Id: {employees.Manager_Id} Job_Id: {employees.Job_Id} Department_Id: {employees.Department_Id}");
+            }
+            Console.ReadKey();
+        }
     }
 }
