@@ -250,6 +250,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU INSERT : REGIONS
         public void ViewMenuInsert()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tINSERT TO TABLE\t");
             Console.WriteLine("===================================");
             Console.Write("Add a new regions name :");
@@ -271,6 +272,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU GETBY ID : REGIONS
         public void ViewMenuGetById()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tGET REGIONS BY ID\t");
             Console.WriteLine("===================================");
             Console.Write("Input region id :");
@@ -288,6 +290,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU UPDATE : REGIONS
         public void ViewMenuUpdate()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tUPDATE TABLE REGIONS\t");
             Console.WriteLine("===================================");
             Console.Write("Input region id :");
@@ -311,6 +314,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU DELETE : REGIONS
         public void ViewMenuDelete()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tDELETE TABLE REGIONS\t ==");
             Console.WriteLine("===================================");
             Console.Write("Input a region id to delete :");
@@ -350,9 +354,10 @@ namespace Connectivity_SQLQuery
             Console.WriteLine("4. Delete Table");
             Console.WriteLine("5. Exit");
             Console.Write("Select a menu :");
-            int inputMenuReg = Convert.ToInt32(Console.ReadLine());
+            
             try
             {
+                int inputMenuReg = Convert.ToInt32(Console.ReadLine());
                 switch (inputMenuReg)
                 {
                     case 1:
@@ -374,13 +379,19 @@ namespace Connectivity_SQLQuery
                     case 5:
                         Environment.Exit(0);
                         break;
+                    default:
+                        Console.WriteLine("Invalid choice, please try again...");
+                        Console.Write("Select a menu :");
+                        Console.ReadLine();
+                        ViewMenuRegions();
+                        break;
                 }
             }
             catch (Exception ex) 
             {
                 Console.WriteLine("ERROR : Input Not Valid");
                 Console.ReadKey();
-                /*this.ViewMenuRegions();*/
+                this.ViewMenuRegions();
             }
         }
     }
