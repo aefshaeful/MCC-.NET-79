@@ -274,6 +274,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU INSERT : COUNTRIES
         public void ViewMenuInsert()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tINSERT TO TABLE\t");
             Console.WriteLine("===================================");
             Console.Write("Add a new countries id :");
@@ -298,6 +299,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU GETBY ID : COUNTRIES
         public void ViewMenuGetById()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tGet Countries by ID\t");
             Console.WriteLine("===================================");
             Console.Write("Input countries id :");
@@ -314,6 +316,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU UPDATE
         public void ViewMenuUpdate()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tUPDATE TABLE COUNTRIES\t");
             Console.WriteLine("===================================");
             Console.Write("Input countries id :");
@@ -338,6 +341,7 @@ namespace Connectivity_SQLQuery
         // VIEW MENU DELETE : COUNTRIES
         public void ViewMenuDelete()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tDELETE TABLE COUNTRIES\t");
             Console.WriteLine("===================================");
             Console.Write("Input a countries id to delete  :");
