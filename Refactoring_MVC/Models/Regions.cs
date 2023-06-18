@@ -102,9 +102,9 @@ namespace Refactoring_MVC.Models
         }
 
         // GETBY ID
-        public List<Regions> GetById(int id)
+        public Regions GetById(int id)
         {
-            var region = new List<Regions>();
+            var reg = new Regions();
             try
             {
                 // MEMBUAT KONEKSI      
@@ -127,18 +127,15 @@ namespace Refactoring_MVC.Models
                 using SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        var reg = new Regions();
-                        reg.Id = reader.GetInt32(0);
-                        reg.Name = reader.GetString(1);
+                    reader.Read();
 
-                        region.Add(reg);
-                    }
+                    reg.Id = reader.GetInt32(0);
+                    reg.Name = reader.GetString(1);
                 }
                 else
                 {
-                    Console.WriteLine("Data Not Found!!");
+                    reg = new Regions();
+                    /*Console.WriteLine("Data Not Found!!");*/
                 }
                 reader.Close();
             }
@@ -147,7 +144,7 @@ namespace Refactoring_MVC.Models
                 Console.WriteLine(ex.Message);
             }
             Connection.connection.Close();
-            return region;
+            return reg;
         }
 
         // UPDATE TABLE
