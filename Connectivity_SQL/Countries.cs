@@ -363,6 +363,7 @@ namespace Connectivity_SQL
         public void ViewMenuCountries()
         {
             //GETALL : COUNTRIES
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL COUNTRIES\t");
             Console.WriteLine("===================================");
@@ -381,25 +382,35 @@ namespace Connectivity_SQL
             Console.WriteLine("4. Delete Table");
             Console.WriteLine("5. Exit");
             Console.Write("Select a menu :");
-            int inputMenuCount = Convert.ToInt32(Console.ReadLine());
+            
             try
             {
+                int inputMenuCount = Convert.ToInt32(Console.ReadLine());
                 switch (inputMenuCount)
                 {
                     case 1:
                         ViewMenuInsert();
+                        ViewMenuCountries();
                         break;
                     case 2:
                         ViewMenuGetById();
+                        ViewMenuCountries();
                         break;
                     case 3:
                         ViewMenuUpdate();
+                        ViewMenuCountries();
                         break;
                     case 4:
                         ViewMenuDelete();
+                        ViewMenuCountries();
                         break;
                     case 5:
-                        Environment.Exit(0);
+                        viewMenu.View();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice, please try again...");
+                        Console.ReadLine();
+                        ViewMenuCountries();
                         break;
                 }
             }
