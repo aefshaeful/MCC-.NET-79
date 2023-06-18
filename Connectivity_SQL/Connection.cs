@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Connectivity_SQLQuery
+namespace Connectivity_SQL
 {
     public class Connection
     {
