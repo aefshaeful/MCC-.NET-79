@@ -66,6 +66,7 @@ namespace Connectivity_SQL
         public void ViewMenuLocation()
         {
             // GETALL LOCATION
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL LOCATION\t");
             Console.WriteLine("===================================");
@@ -75,6 +76,7 @@ namespace Connectivity_SQL
                 Console.WriteLine($"Id: {locations.Id} StreetAddress: {locations.StreetAddress} PostalCode: {locations.PostalCode} City: {locations.City} StateProvince: {locations.StateProvince} CountryId: {locations.CountryId}");
             }
             Console.ReadKey();
+            viewMenu.View();
         }
     }
 }
