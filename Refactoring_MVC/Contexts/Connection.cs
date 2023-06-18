@@ -12,6 +12,6 @@ namespace Refactoring_MVC.Contexts
     {
         // Connection Secara Global
         private static string connectionString = "Data Source=LAPTOP-8IGJNOSS;Database=db_hr;Integrated Security=True;Connect Timeout=30;";
-        public SqlConnection connection = new SqlConnection(connectionString);
+        public static SqlConnection connection = new SqlConnection(connectionString);
     }
 }
