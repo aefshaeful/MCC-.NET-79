@@ -116,9 +116,9 @@ namespace Refactoring_MVC.Models
 
 
         // GETBY ID
-        public List<Countries> GetById(string id)
+        public Countries GetById(string id)
         {
-            var countries = new List<Countries>();
+            var countries = new Countries();
             try
             {
                 // MEMBUAT KONEKSI      
@@ -141,19 +141,15 @@ namespace Refactoring_MVC.Models
                 using SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        var country = new Countries();
-                        country.Id = reader.GetString(0);
-                        country.Name = reader.GetString(1);
-                        country.RegionId = reader.GetInt32(2);
-
-                        countries.Add(country);
-                    }
+                    reader.Read();
+                    
+                    countries.Id = reader.GetString(0);
+                    countries.Name = reader.GetString(1);
+                    countries.RegionId = reader.GetInt32(2);
                 }
                 else
                 {
-                    Console.WriteLine("Data Not Found!!");
+                    countries = new Countries();
                 }
                 reader.Close();
             }
