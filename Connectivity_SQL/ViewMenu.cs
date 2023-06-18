@@ -37,10 +37,12 @@ namespace Connectivity_SQL
             Console.WriteLine("7. Data Jobs");
             Console.WriteLine("8. LINQ");
             Console.WriteLine("9. Exit");
+            Console.WriteLine("============================================");
             Console.Write("Please choose a data :");
-            int inputView = Convert.ToInt32(Console.ReadLine());
+           
             try
             {
+                int inputView = Convert.ToInt32(Console.ReadLine());
                 switch (inputView)
                 {
                     case 1:
@@ -69,6 +71,11 @@ namespace Connectivity_SQL
                         break;
                     case 9:
                         Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice, please try again...");
+                        Console.Write("Please choose a data :");
+                        Console.ReadLine();
                         break;
                 }
             }
