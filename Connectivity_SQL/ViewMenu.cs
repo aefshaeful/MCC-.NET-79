@@ -44,28 +44,28 @@ namespace Connectivity_SQL
                 switch (inputView)
                 {
                     case 1:
-                        this._region();
+                        _region.ViewMenuRegions();
                         break;
                     case 2:
-                        this._countrie();
+                        _countrie.ViewMenuCountries();
                         break;
                     case 3:
-                        this._location();
+                        _location.ViewMenuLocation();
                         break;
                     case 4:
-                        this._department();
+                        _department.ViewMenuDepartments();
                         break;
                     case 5:
-                        this._employee();
+                        _employee.ViewMenuEmployees();
                         break;
                     case 6:
-                        this._historie();
+                        _historie.ViewMenuHistories();
                         break;
                     case 7:
-                        this._job();
+                        _job.ViewMenuJobs();
                         break;
                     case 8:
-                        this._linq();
+                        _linq.ViewMenuLinq();
                         break;
                     case 9:
                         Environment.Exit(0);
