@@ -349,7 +349,7 @@ namespace Connectivity_SQLQuery
             Console.WriteLine("3. Update Table");
             Console.WriteLine("4. Delete Table");
             Console.WriteLine("5. Exit");
-            Console.WriteLine("Select a menu :");
+            Console.Write("Select a menu :");
             int inputMenuReg = Convert.ToInt32(Console.ReadLine());
             try
             {
