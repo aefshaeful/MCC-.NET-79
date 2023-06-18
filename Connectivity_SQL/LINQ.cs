@@ -1,4 +1,4 @@
-﻿using Connectivity_SQLQuery;
+﻿using Connectivity_SQL;
 
 namespace Connectivity_SQL
 {
