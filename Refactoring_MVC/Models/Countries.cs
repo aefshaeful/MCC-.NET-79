@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Refactoring_MVC.Contexts
+using Refactoring_MVC.Contexts;
 using System.Data;
 
 namespace Refactoring_MVC.Models
@@ -59,7 +59,7 @@ namespace Refactoring_MVC.Models
 
 
         // INSERT TABLE
-        public static int insert(string id, string name, int region_id)
+        public int insert(string id, string name, int region_id)
         {
             int result = 0;
             Connection.connection.Open();
@@ -116,7 +116,7 @@ namespace Refactoring_MVC.Models
 
 
         // GETBY ID
-        public static List<Countries> GetById(string id)
+        public List<Countries> GetById(string id)
         {
             var countries = new List<Countries>();
             try
@@ -167,7 +167,7 @@ namespace Refactoring_MVC.Models
 
 
         // UPDATE TABLE
-        public static int Update(string id, string newname, int region_id)
+        public int Update(string id, string newname, int region_id)
         {
             int result = 0;
             Connection.connection.Open();
@@ -224,7 +224,7 @@ namespace Refactoring_MVC.Models
 
 
         // DELETE TABLE
-        public static int Delete(string id)
+        public int Delete(string id)
         {
             int result = 0;
             Connection.connection.Open();
