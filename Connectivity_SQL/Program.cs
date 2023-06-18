@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
 
-namespace Connectivity_SQLQuery
+namespace Connectivity_SQL
 {
     public class Program
     {
