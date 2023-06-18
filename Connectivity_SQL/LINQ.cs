@@ -43,6 +43,9 @@ namespace Connectivity_SQL
                 Console.WriteLine("Regions :" + emp.Regions);
                 Console.WriteLine("======================================");
             }
+            Console.WriteLine("Press enter to continue");
+            Console.ReadKey();
+            this.ViewMenuLinq();
         }
 
         public void GetTolalEmployeesSetDepart()
@@ -73,7 +76,43 @@ namespace Connectivity_SQL
                 Console.WriteLine("======================================");
                 Console.WriteLine(" ");
             }
+            Console.WriteLine("Press enter to continue");
+            Console.ReadKey();
+            this.ViewMenuLinq();
         }
 
+
+        // VIEW MENU LINQ
+        public void ViewMenuLinq()
+        {
+            Console.WriteLine("\tVIEW MENU LINQ\t");
+            Console.WriteLine("===================================");
+            Console.WriteLine("1. Get Employees With Just Five ID");
+            Console.WriteLine("2. Total Employees of Each Department");
+            Console.WriteLine("3. Exit");
+            Console.WriteLine("Please choose a menu :");
+            int inputLinq = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                switch (inputLinq)
+                {
+                    case 1:
+                        GetTakeEmployees();
+                        break;
+                    case 2:
+                        GetTolalEmployeesSetDepart();
+                        break;
+                    case 3:
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR : Input Not Valid");
+                Console.ReadKey();
+                this.ViewMenuLinq();
+            }
+        }
     }
 }
