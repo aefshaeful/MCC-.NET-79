@@ -64,6 +64,7 @@ namespace Connectivity_SQL
         public void ViewMenuJobs()
         {
             //GETALL : JOBS
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL JOBS\t");
             Console.WriteLine("===================================");
@@ -73,6 +74,7 @@ namespace Connectivity_SQL
                 Console.WriteLine($"Id: {jobs.Id}, Title: {jobs.Title}, Min_Salary: {jobs.Min_Salary}, Max_Salary: {jobs.Max_Salary}");
             }
             Console.ReadKey();
+            viewMenu.View();
         }
     }
 }
