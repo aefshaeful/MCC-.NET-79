@@ -9,8 +9,8 @@ namespace Refactoring_MVC.Controllers
 {
     public class ViewMenuController
     {
-        /*Regions _region = new Regions();
-        Countries _countrie = new Countries();
+        RegionsController _region = new RegionsController();
+        /*Countries _countrie = new Countries();
         Locations _location = new Locations();
         Departments _department = new Departments();
         Employees _employee = new Employees();
@@ -45,25 +45,25 @@ namespace Refactoring_MVC.Controllers
                         _region.ViewMenuRegions();
                         break;
                     case 2:
-                        _countrie.ViewMenuCountries();
+                        /*_countrie.ViewMenuCountries();*/
                         break;
                     case 3:
-                        _location.ViewMenuLocation();
+                       /* _location.ViewMenuLocation();*/
                         break;
                     case 4:
-                        _department.ViewMenuDepartments();
+                        /*_department.ViewMenuDepartments();*/
                         break;
                     case 5:
-                        _employee.ViewMenuEmployees();
+                        /*_employee.ViewMenuEmployees();*/
                         break;
                     case 6:
-                        _historie.ViewMenuHistories();
+                        /*_historie.ViewMenuHistories();*/
                         break;
                     case 7:
-                        _job.ViewMenuJobs();
+                        /*_job.ViewMenuJobs();*/
                         break;
                     case 8:
-                        _linq.ViewMenuLinq();
+                       /* _linq.ViewMenuLinq();*/
                         break;
                     case 9:
                         Environment.Exit(0);
