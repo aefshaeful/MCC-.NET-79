@@ -17,16 +17,12 @@ namespace Refactoring_MVC.Controllers
         public void ViewMenuLocation()
         {
             // GETALL LOCATION
-           /* ViewMenuController viewMenu = new ViewMenuController();
-            Console.Clear();
-            Console.WriteLine("\tGET ALL LOCATION\t");
-            Console.WriteLine("===================================");*/
-            
+           
+           
             var locations = _locations.GetAll();
             _locationsview.GetAll(locations);
 
-            /*Console.ReadKey();
-            viewMenu.View();*/
+            
         }
     }
 }
