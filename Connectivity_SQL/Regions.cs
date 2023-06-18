@@ -336,7 +336,7 @@ namespace Connectivity_SQL
         public void ViewMenuRegions()
         {
             //GETALL : REGION (Select Tabel Regions)
-            ViewMenu views = new ViewMenu();
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL REGIONS\t");
             Console.WriteLine("===================================");
@@ -378,7 +378,7 @@ namespace Connectivity_SQL
                         ViewMenuRegions();
                         break;
                     case 5:
-                        views.View();
+                        viewMenu.View();
                         break;
                     default:
                         Console.WriteLine("Invalid choice, please try again...");
