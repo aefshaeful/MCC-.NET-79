@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Refactoring_MVC.Contexts;
+using Refactoring_MVC.Views;
 using System.Data;
 
 namespace Refactoring_MVC.Models
@@ -21,7 +22,7 @@ namespace Refactoring_MVC.Models
         //GETALL 
         public List<Locations> GetAll()
         {
-            List<Locations> locations = new List<Locations>();
+            var locations = new List<Locations>();
             try
             {
                 //Membuat instance untuk command
