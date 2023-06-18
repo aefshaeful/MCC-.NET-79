@@ -78,6 +78,7 @@ namespace Connectivity_SQL
         public void ViewMenuEmployees()
         {
             //GETALL : EMPLOYEES
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL EMPLOYEES\t");
             Console.WriteLine("===================================");
@@ -87,6 +88,7 @@ namespace Connectivity_SQL
                 Console.WriteLine($"Id: {employees.Id} Firsh_Name: {employees.Firsh_Name} Last_Name: {employees.Last_Name} Email: {employees.Email} Phone_Number: {employees.Phone_Number} Hire_Date: {employees.Hire_Date} Salary: {employees.Salary} Commision_Pct: {employees.Commision_Pct} Manager_Id: {employees.Manager_Id} Job_Id: {employees.Job_Id} Department_Id: {employees.Department_Id}");
             }
             Console.ReadKey();
+            viewMenu.View();
         }
     }
 }
