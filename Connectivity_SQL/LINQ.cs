@@ -90,7 +90,7 @@ namespace Connectivity_SQL
             Console.WriteLine("1. Get Employees With Just Five ID");
             Console.WriteLine("2. Total Employees of Each Department");
             Console.WriteLine("3. Exit");
-            Console.WriteLine("Please choose a menu :");
+            Console.Write("Please choose a menu linq :");
             int inputLinq = Convert.ToInt32(Console.ReadLine());
             try
             {
