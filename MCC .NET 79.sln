@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connectivity_SQL", "Connectivity_SQL\Connectivity_SQL.csproj", "{7B9217B6-DC83-4F95-B9AF-8E283C290D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connectivity_SQL", "Connectivity_SQL\Connectivity_SQL.csproj", "{7B9217B6-DC83-4F95-B9AF-8E283C290D7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refactoring_MVC", "Refactoring_MVC\Refactoring_MVC.csproj", "{99B61C03-4C70-4827-ABD6-54A1007A62A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7B9217B6-DC83-4F95-B9AF-8E283C290D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B9217B6-DC83-4F95-B9AF-8E283C290D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B9217B6-DC83-4F95-B9AF-8E283C290D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B61C03-4C70-4827-ABD6-54A1007A62A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B61C03-4C70-4827-ABD6-54A1007A62A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B61C03-4C70-4827-ABD6-54A1007A62A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B61C03-4C70-4827-ABD6-54A1007A62A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
