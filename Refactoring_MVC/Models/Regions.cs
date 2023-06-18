@@ -11,7 +11,6 @@ namespace Refactoring_MVC.Models
 {
     public class Regions
     {
-        // MEMBUAT TABLE REGIONS
         public int Id { get; set; }
         public string Name { get; set; }
 
