@@ -65,6 +65,7 @@ namespace Connectivity_SQL
         public void ViewMenuHistories()
         {
             //GETALL : HISTORIES
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL HISTORIES\t");
             Console.WriteLine("===================================");
@@ -74,6 +75,7 @@ namespace Connectivity_SQL
                 Console.WriteLine($"Start_Date: {histories.Start_Date} Employee_Id: {histories.Employee_Id} End_Date: {histories.End_Date} Department_Id: {histories.Department_Id} Job_Id; {histories.Job_Id}");
             }
             Console.ReadKey();
+            viewMenu.View();
         }
     }
 }
