@@ -382,7 +382,6 @@ namespace Connectivity_SQL
                         break;
                     default:
                         Console.WriteLine("Invalid choice, please try again...");
-                        Console.Write("Select a menu :");
                         Console.ReadLine();
                         ViewMenuRegions();
                         break;
