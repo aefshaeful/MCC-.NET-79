@@ -333,7 +333,7 @@ namespace Connectivity_SQLQuery
         {
             //GETALL : REGION (Select Tabel Regions)
             Console.Clear();
-            Console.WriteLine("\tGET ALL REGIONS\t ==");
+            Console.WriteLine("\tGET ALL REGIONS\t");
             Console.WriteLine("===================================");
             List<Regions> regions = GetAllRegion();
             foreach (Regions region in regions)
@@ -357,15 +357,19 @@ namespace Connectivity_SQLQuery
                 {
                     case 1:
                         ViewMenuInsert();
+                        ViewMenuRegions();
                         break;
                     case 2:
                         ViewMenuGetById();
+                        ViewMenuRegions();
                         break;
                     case 3:
                         ViewMenuUpdate();
+                        ViewMenuRegions();
                         break;
                     case 4:
                         ViewMenuDelete();
+                        ViewMenuRegions();
                         break;
                     case 5:
                         Environment.Exit(0);
@@ -376,7 +380,7 @@ namespace Connectivity_SQLQuery
             {
                 Console.WriteLine("ERROR : Input Not Valid");
                 Console.ReadKey();
-                this.ViewMenuRegions();
+                /*this.ViewMenuRegions();*/
             }
         }
     }
