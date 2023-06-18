@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-Refactoring_MVC.Models
+using Refactoring_MVC.Models;
 
 namespace Refactoring_MVC.Views
 {
