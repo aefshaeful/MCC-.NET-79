@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Connection.Views;
-using Connection.Models;
 using Refactoring_MVC.Views;
+using Refactoring_MVC.Models;
 
 namespace Refactoring_MVC.Controllers
 {
@@ -16,14 +15,14 @@ namespace Refactoring_MVC.Controllers
 
 
         // VIEW MENU INSERT : REGIONS
-        public void ViewMenuInsert()
+/*        public void ViewMenuInsert()
         {
             Console.WriteLine("\n");
             Console.WriteLine("\tINSERT TO TABLE\t");
             Console.WriteLine("===================================");
             Console.Write("Add a new regions name :");
             string name = Console.ReadLine();
-            int isInsertSuccessful = Regions.insertRegion(name);
+            int isInsertSuccessful = Regions.insert(name);
             if (isInsertSuccessful > 0)
             {
                 Console.WriteLine("Add Data Success");
@@ -33,12 +32,12 @@ namespace Refactoring_MVC.Controllers
                 Console.WriteLine("Add Data Invalid");
             }
             Console.ReadKey();
-            /*ViewMenuRegions();*/
-        }
+            *//*ViewMenuRegions();*//*
+        }*/
 
 
         // VIEW MENU GETBY ID : REGIONS
-        public void ViewMenuGetById()
+/*        public void ViewMenuGetById()
         {
             Console.WriteLine("\n");
             Console.WriteLine("\tGET REGIONS BY ID\t");
@@ -57,11 +56,11 @@ namespace Refactoring_MVC.Controllers
                 _regionsView.GetById(region);
             }
             Console.ReadKey();
-        }
+        }*/
 
 
         // VIEW MENU UPDATE : REGIONS
-        public void ViewMenuUpdate()
+/*        public void ViewMenuUpdate()
         {
             Console.WriteLine("\n");
             Console.WriteLine("\tUPDATE TABLE REGIONS\t");
@@ -80,12 +79,12 @@ namespace Refactoring_MVC.Controllers
                 Console.WriteLine("Update Failed");
             }
             Console.ReadKey();
-            /* ViewMenuRegions();*/
-        }
+            *//* ViewMenuRegions();*//*
+        }*/
 
 
         // VIEW MENU DELETE : REGIONS
-        public void ViewMenuDelete()
+/*        public void ViewMenuDelete()
         {
             Console.WriteLine("\n");
             Console.WriteLine("\tDELETE TABLE REGIONS\t ==");
@@ -102,8 +101,8 @@ namespace Refactoring_MVC.Controllers
                 Console.WriteLine("Delete Failed");
             }
             Console.ReadKey();
-            /*ViewMenuRegions();*/
-        }
+            *//*ViewMenuRegions();*//*
+        }*/
 
         // VIEW MENU GETALL : REGIONS
         public void ViewMenuRegions()
@@ -126,7 +125,7 @@ namespace Refactoring_MVC.Controllers
                 _regionsView.GetAll(regions);
 
                 Console.WriteLine("\n");
-                Console.WriteLine("\tVIEW MENU REGIONS\t");
+                Console.WriteLine("\tVIEW MENU REGIONS 123\t");
                 Console.WriteLine("===================================");
                 Console.WriteLine("1. Insert Table");
                 Console.WriteLine("2. Getby Id");
@@ -141,20 +140,20 @@ namespace Refactoring_MVC.Controllers
                     switch (inputMenuReg)
                     {
                         case 1:
-                            ViewMenuInsert();
-                            ViewMenuRegions();
+/*                            ViewMenuInsert();
+                            ViewMenuRegions();*/
                             break;
                         case 2:
-                            ViewMenuGetById();
-                            ViewMenuRegions();
+/*                            ViewMenuGetById();
+                            ViewMenuRegions();*/
                             break;
                         case 3:
-                            ViewMenuUpdate();
-                            ViewMenuRegions();
+/*                            ViewMenuUpdate();
+                            ViewMenuRegions();*/
                             break;
                         case 4:
-                            ViewMenuDelete();
-                            ViewMenuRegions();
+   /*                         ViewMenuDelete();
+                            ViewMenuRegions();*/
                             break;
                         case 5:
                             viewMenu.View();
