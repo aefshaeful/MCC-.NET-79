@@ -85,6 +85,7 @@ namespace Connectivity_SQL
         // VIEW MENU LINQ
         public void ViewMenuLinq()
         {
+            Console.WriteLine("\n");
             Console.WriteLine("\tVIEW MENU LINQ\t");
             Console.WriteLine("===================================");
             Console.WriteLine("1. Get Employees With Just Five ID");
