@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace Connectivity_SQLQuery
+namespace Connectivity_SQL
 {
     public class Regions
     {
@@ -336,6 +336,7 @@ namespace Connectivity_SQLQuery
         public void ViewMenuRegions()
         {
             //GETALL : REGION (Select Tabel Regions)
+            ViewMenu views = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL REGIONS\t");
             Console.WriteLine("===================================");
@@ -377,7 +378,7 @@ namespace Connectivity_SQLQuery
                         ViewMenuRegions();
                         break;
                     case 5:
-                        Environment.Exit(0);
+                        views.View();
                         break;
                     default:
                         Console.WriteLine("Invalid choice, please try again...");
