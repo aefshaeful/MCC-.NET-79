@@ -12,11 +12,11 @@ namespace Refactoring_MVC.Controllers
         RegionsController _region = new RegionsController();
         CountriesController _countrie = new CountriesController();
         LocationsController _location = new LocationsController();
-        /*Departments _department = new Departments();
-        Employees _employee = new Employees();
-        Histories _historie = new Histories();
-        Jobs _job = new Jobs();
-        LINQ _linq = new LINQ();*/
+        DepartmentsController _department = new DepartmentsController();
+        EmployeesController _employee = new EmployeesController();
+        HistoriesController _historie = new HistoriesController();
+        JobsController _job = new JobsController();
+        LINQController _linq = new LINQController();
 
         public void View()
         {
@@ -51,19 +51,19 @@ namespace Refactoring_MVC.Controllers
                         _location.ViewMenuLocation();
                         break;
                     case 4:
-                        /*_department.ViewMenuDepartments();*/
+                        _department.ViewMenuDepartments();
                         break;
                     case 5:
-                        /*_employee.ViewMenuEmployees();*/
+                        _employee.ViewMenuEmployees();
                         break;
                     case 6:
-                        /*_historie.ViewMenuHistories();*/
+                        _historie.ViewMenuHistories();
                         break;
                     case 7:
-                        /*_job.ViewMenuJobs();*/
+                        _job.ViewMenuJobs();
                         break;
                     case 8:
-                       /* _linq.ViewMenuLinq();*/
+                        _linq.ViewMenuLinq();
                         break;
                     case 9:
                         Environment.Exit(0);
