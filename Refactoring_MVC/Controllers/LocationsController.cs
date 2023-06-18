@@ -13,16 +13,11 @@ namespace Refactoring_MVC.Controllers
         private Locations _locations = new Locations();
         private LocationsView _locationsview = new LocationsView();
 
-        // VIEW MENU LOCATION
         public void ViewMenuLocation()
         {
             // GETALL LOCATION
-           
-           
             var locations = _locations.GetAll();
             _locationsview.GetAll(locations);
-
-            
         }
     }
 }
