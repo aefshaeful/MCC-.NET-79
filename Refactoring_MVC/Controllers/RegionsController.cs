@@ -113,7 +113,7 @@ namespace Refactoring_MVC.Controllers
             Console.Clear();
             Console.WriteLine("\tGET ALL REGIONS\t");
             Console.WriteLine("===================================");
-            List<Regions> regions = GetAllRegion();
+            List<Regions> regions = _regions.GetAll();
             foreach (Regions region in regions)
             {
                 Console.WriteLine($"id: {region.Id} Name: {region.Name}");
