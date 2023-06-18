@@ -64,6 +64,7 @@ namespace Connectivity_SQL
         public void ViewMenuDepartments()
         {
             //GETALL : DEPARTMENTS
+            ViewMenu viewMenu = new ViewMenu();
             Console.Clear();
             Console.WriteLine("\tGET ALL DEPARTMENTS");
             Console.WriteLine("===================================");
@@ -73,6 +74,7 @@ namespace Connectivity_SQL
                 Console.WriteLine($"Id: {departments.Id} Name: {departments.Name} Location_Id: {departments.Location_Id} Manager_Id: {departments.Manager_Id}");
             }
             Console.ReadKey();
+            viewMenu.View();
         }
     }
 }
