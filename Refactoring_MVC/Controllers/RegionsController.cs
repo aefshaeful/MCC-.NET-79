@@ -45,17 +45,17 @@ namespace Refactoring_MVC.Controllers
             Console.WriteLine("===================================");
             Console.Write("Input region id :");
             int id = int.Parse(Console.ReadLine());
-            var region = _regions.GetByID(id);
+
+            var region = _regions.GetById(id);
 
             if (region == null)
             {
-                _regionView.NotFound();
+                _regionsView.NotFound();
             }
             else
             {
-                _regionView.GetById(region);
+                _regionsView.GetById(region);
             }
-
             Console.ReadKey();
         }
 
@@ -108,64 +108,72 @@ namespace Refactoring_MVC.Controllers
         // VIEW MENU GETALL : REGIONS
         public void ViewMenuRegions()
         {
-            //GETALL : REGION (Select Tabel Regions)
-            ViewMenu viewMenu = new ViewMenu();
-            Console.Clear();
-            Console.WriteLine("\tGET ALL REGIONS\t");
-            Console.WriteLine("===================================");
-            List<Regions> regions = _regions.GetAll();
-            foreach (Regions region in regions)
+            bool isFinish = true;
+            do
             {
-                Console.WriteLine($"id: {region.Id} Name: {region.Name}");
-            }
+                ViewMenuController viewMenu = new ViewMenuController();
+                Console.Clear();
+                Console.WriteLine("\tGET ALL REGIONS\t");
+                Console.WriteLine("===================================");
 
-            Console.WriteLine("\n");
-            Console.WriteLine("\tVIEW MENU REGIONS\t");
-            Console.WriteLine("===================================");
-            Console.WriteLine("1. Insert Table");
-            Console.WriteLine("2. Getby Id");
-            Console.WriteLine("3. Update Table");
-            Console.WriteLine("4. Delete Table");
-            Console.WriteLine("5. Exit");
-            Console.Write("Select a menu :");
-
-            try
-            {
-                int inputMenuReg = Convert.ToInt32(Console.ReadLine());
-                switch (inputMenuReg)
+               /* List<Regions> regions = _regions.GetAll();
+                foreach (Regions region in regions)
                 {
-                    case 1:
-                        ViewMenuInsert();
-                        ViewMenuRegions();
-                        break;
-                    case 2:
-                        ViewMenuGetById();
-                        ViewMenuRegions();
-                        break;
-                    case 3:
-                        ViewMenuUpdate();
-                        ViewMenuRegions();
-                        break;
-                    case 4:
-                        ViewMenuDelete();
-                        ViewMenuRegions();
-                        break;
-                    case 5:
-                        viewMenu.View();
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice, please try again...");
-                        Console.ReadLine();
-                        ViewMenuRegions();
-                        break;
+                    Console.WriteLine($"id: {region.Id} Name: {region.Name}");
+                }*/
+
+                var regions = _regions.GetAll();
+                _regionsView.GetAll(regions);
+
+                Console.WriteLine("\n");
+                Console.WriteLine("\tVIEW MENU REGIONS\t");
+                Console.WriteLine("===================================");
+                Console.WriteLine("1. Insert Table");
+                Console.WriteLine("2. Getby Id");
+                Console.WriteLine("3. Update Table");
+                Console.WriteLine("4. Delete Table");
+                Console.WriteLine("5. Exit");
+                Console.Write("Select a menu :");
+
+                try
+                {
+                    int inputMenuReg = Convert.ToInt32(Console.ReadLine());
+                    switch (inputMenuReg)
+                    {
+                        case 1:
+                            ViewMenuInsert();
+                            ViewMenuRegions();
+                            break;
+                        case 2:
+                            ViewMenuGetById();
+                            ViewMenuRegions();
+                            break;
+                        case 3:
+                            ViewMenuUpdate();
+                            ViewMenuRegions();
+                            break;
+                        case 4:
+                            ViewMenuDelete();
+                            ViewMenuRegions();
+                            break;
+                        case 5:
+                            viewMenu.View();
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice, please try again...");
+                            Console.ReadLine();
+                            ViewMenuRegions();
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR : Input Not Valid");
+                    Console.ReadKey();
+                    this.ViewMenuRegions();
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR : Input Not Valid");
-                Console.ReadKey();
-                this.ViewMenuRegions();
-            }
+            while (isFinish);
         }
     }
 }
