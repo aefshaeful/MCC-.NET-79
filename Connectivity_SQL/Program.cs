@@ -225,16 +225,16 @@ namespace Connectivity_SQLQuery
 
 
             ////////////////////////LINQ///////////////////////////
-            
+
             /*LINQ linq = new LINQ();
             linq.GetTakeEmployees();*/
 
-            LINQ linQ = new LINQ();
-            linQ.GetTolalEmployeesSetDepart();
+            /* LINQ linQ = new LINQ();
+             linQ.GetTolalEmployeesSetDepart();*/
 
 
-            /*ViewMenu viewmenu = new ViewMenu();
-            viewmenu.View();*/
+            ViewMenu viewmenu = new ViewMenu();
+            viewmenu.View();
         }
     }
 }
