@@ -85,6 +85,7 @@ namespace Connectivity_SQL
         // VIEW MENU LINQ
         public void ViewMenuLinq()
         {
+            ViewMenu viewMenu = new ViewMenu();
             Console.WriteLine("\n");
             Console.WriteLine("\tVIEW MENU LINQ\t");
             Console.WriteLine("===================================");
@@ -104,7 +105,7 @@ namespace Connectivity_SQL
                         GetTolalEmployeesSetDepart();
                         break;
                     case 3:
-                        Environment.Exit(0);
+                        viewMenu.View();
                         break;
                 }
             }
