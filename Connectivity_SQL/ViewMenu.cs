@@ -37,7 +37,7 @@ namespace Connectivity_SQL
             Console.WriteLine("7. Data Jobs");
             Console.WriteLine("8. LINQ");
             Console.WriteLine("9. Exit");
-            Console.WriteLine("Please choose a data :");
+            Console.Write("Please choose a data :");
             int inputView = Convert.ToInt32(Console.ReadLine());
             try
             {
