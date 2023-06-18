@@ -12,7 +12,6 @@ namespace Refactoring_MVC.Views
         public void GetById(Regions region)
         {
             Console.WriteLine($"Id: {region.Id} Name: {region.Name}");
-            /*Console.ReadKey();*/
         }
 
         public void GetAll(List<Regions> regions)
