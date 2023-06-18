@@ -21,7 +21,6 @@ namespace Refactoring_MVC.Views
             {
                 Console.WriteLine($"Id: {location.Id} StreetAddress: {location.StreetAddress} PostalCode: {location.PostalCode} City: {location.City} StateProvince: {location.StateProvince} CountryId: {location.CountryId}");
             }
-
             Console.ReadKey();
             viewMenu.View();
         }
