@@ -46,14 +46,16 @@ namespace Refactoring_MVC.Controllers
             int id = int.Parse(Console.ReadLine());
 
             var region = _regions.GetById(id);
+            bool result = false;
 
-            if (region == null)
+            if (region != null)
             {
                 _regionsView.NotFound();
             }
             else
             {
                 _regionsView.GetById(region);
+                result = true;
             }
             Console.ReadKey();
         }
