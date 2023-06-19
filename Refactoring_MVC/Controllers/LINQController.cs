@@ -12,7 +12,7 @@ namespace Refactoring_MVC.Controllers
     public class LINQController
     {
         /*private LINQ _linq = new LINQ();
-        private LINQView _linqview = new LINQView;
+        private LINQView _linqview = new LINQView();
 
         public void ViewMenuLinq()
         {
@@ -21,10 +21,17 @@ namespace Refactoring_MVC.Controllers
 
             //var linq = _linq.GetTakeEmployees();
             //var lin = _linq.GetTolalEmployeesSetDepart();
-            var linq = _linq.MenuLinq();
-            _linqview.MenuLinq(linq);
-            _linqview.GetTakeEmployees(linq);
+            //var linq = _linq.MenuLinq();
+            //_linqview.MenuLinq(linq);
+            //_linqview.GetTakeEmployees(linq);
 
+            Console.WriteLine("\n");
+            Console.WriteLine("\tVIEW MENU LINQ\t");
+            Console.WriteLine("===================================");
+            Console.WriteLine("1. Get Employees With Just Five ID");
+            Console.WriteLine("2. Total Employees of Each Department");
+            Console.WriteLine("3. Exit");
+            Console.Write("Please choose a menu linq :");
             int inputLinq = Convert.ToInt32(Console.ReadLine());
             try
             {
