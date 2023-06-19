@@ -48,13 +48,16 @@ namespace Refactoring_MVC.Controllers
             string id = Console.ReadLine();
 
             var count = _countries.GetById(id);
-            if (count == null)
+            bool result = false;
+
+            if (count != null)
             {
                 _countriesView.NotFound();
             }
             else
             {
                 _countriesView.GetById(count);
+                result = true;
             }
             Console.ReadKey();
         }
