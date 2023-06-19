@@ -16,7 +16,7 @@ namespace Refactoring_MVC.Controllers
         EmployeesController _employee = new EmployeesController();
         HistoriesController _historie = new HistoriesController();
         JobsController _job = new JobsController();
-        LINQController _linq = new LINQController();
+        //LINQController _linq = new LINQController();
 
         public void View()
         {
@@ -63,7 +63,7 @@ namespace Refactoring_MVC.Controllers
                         _job.ViewMenuJobs();
                         break;
                     case 8:
-                        _linq.ViewMenuLinq();
+                        //_linq.ViewMenuLinq();
                         break;
                     case 9:
                         Environment.Exit(0);
